@@ -19,12 +19,35 @@
   ul { padding-left: 1.25rem; }
   li { margin-bottom: .35rem; }
   code { font-size: .9em; }
-  .lang { font-size: .9rem; margin-bottom: 2rem; }
+  /* Dil secici.
+     ⚠️ Gizleme YALNIZCA JS varken devreye giriyor (`html.js` sinifi). Script
+     calismazsa iki dil de gorunur kalir — bir gizlilik politikasi hicbir
+     kosulda yarim okunmamali, ve sayfayi tarayici disindan getiren araclar
+     (Play'in dogrulamasi dahil) metnin tamamini gormeli. */
+  .langbar { display: inline-flex; border: 1px solid #ccc; border-radius: 999px;
+             overflow: hidden; margin: 0 0 2.5rem; }
+  .langbar button { appearance: none; -webkit-appearance: none; border: 0;
+             background: transparent; cursor: pointer; font: inherit;
+             font-size: .9rem; padding: .45rem 1.1rem; color: inherit; }
+  .langbar button[aria-pressed="true"] { background: #1a1a1a; color: #fff; }
+  .langbar button:focus-visible { outline: 2px solid #4a8ae6; outline-offset: -2px; }
+  html.js .doc[hidden] { display: none; }
+  html:not(.js) #en { border-top: 1px solid #ddd; margin-top: 3.5rem; padding-top: 2.5rem; }
+  @media (prefers-color-scheme: dark) {
+    .langbar { border-color: #444; }
+    .langbar button[aria-pressed="true"] { background: #eee; color: #111; }
+    html:not(.js) #en { border-top-color: #333; }
+  }
 </style>
 </head>
 <body>
 
-<p class="lang"><strong>Türkçe</strong> · <a href="#english">English</a></p>
+<nav class="langbar" aria-label="Dil / Language">
+  <button type="button" data-lang="tr" aria-pressed="true">Türkçe</button>
+  <button type="button" data-lang="en" aria-pressed="false">English</button>
+</nav>
+
+<div class="doc" id="tr" lang="tr">
 
 <h1>Gizlilik Politikası</h1>
 <p class="meta">
@@ -104,9 +127,9 @@
   Sorularınız için: <a href="mailto:asrinziyahocaogludeveloper@gmail.com">asrinziyahocaogludeveloper@gmail.com</a>
 </p>
 
-<hr>
+</div><!-- /tr -->
 
-<p class="lang"><a href="#">Türkçe</a> · <strong>English</strong></p>
+<div class="doc" id="en" lang="en" hidden>
 
 <h1 id="english">Privacy Policy</h1>
 <p class="meta">
@@ -182,6 +205,53 @@
 <p>
   Questions: <a href="mailto:asrinziyahocaogludeveloper@gmail.com">asrinziyahocaogludeveloper@gmail.com</a>
 </p>
+
+</div><!-- /en -->
+
+<script>
+(function () {
+  var root = document.documentElement;
+  // Gizleme kurali ancak bu sinif eklenince devreye giriyor: script hic
+  // calismazsa iki dil de gorunur kalir.
+  root.classList.add('js');
+
+  var docs = { tr: document.getElementById('tr'), en: document.getElementById('en') };
+  var buttons = document.querySelectorAll('.langbar button');
+
+  function apply(lang) {
+    if (!docs[lang]) { lang = 'tr'; }
+    docs.tr.hidden = lang !== 'tr';
+    docs.en.hidden = lang !== 'en';
+    root.setAttribute('lang', lang);
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].setAttribute('aria-pressed',
+        String(buttons[i].getAttribute('data-lang') === lang));
+    }
+  }
+
+  // Ilk dil: paylasilan baglantidaki cengel > tarayici dili > Turkce.
+  // `#english` eski surumden kalan bir bagdir ve calismaya devam etmeli.
+  function initial() {
+    var h = (location.hash || '').toLowerCase();
+    if (h === '#en' || h === '#english') { return 'en'; }
+    if (h === '#tr') { return 'tr'; }
+    return (navigator.language || 'tr').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en';
+  }
+
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', function () {
+      var lang = this.getAttribute('data-lang');
+      apply(lang);
+      // Adres cubugu secimi tasisin ki bagi paylasan dogru dili gorsun.
+      history.replaceState(null, '', lang === 'en' ? '#english' : '#tr');
+      window.scrollTo(0, 0);
+    });
+  }
+
+  window.addEventListener('hashchange', function () { apply(initial()); });
+  apply(initial());
+})();
+</script>
 
 </body>
 </html>
