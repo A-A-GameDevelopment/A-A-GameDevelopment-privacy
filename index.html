@@ -52,8 +52,9 @@
 <h1>Gizlilik Politikası</h1>
 <p class="meta">
   <strong>Merge &amp; Mortar</strong> (Google Play'de <em>Merge &amp; Mortar: Kule Savunma</em>)<br>
-  Paket adı: <code>com.aagames.mergekeep</code> · Geliştirici: AA Game Studio (AA Games)<br>
-  Son güncelleme: 15 Ekim 2026 · Sürüm 2.2
+  Paket adı / Bundle ID: <code>com.aagames.mergekeep</code> · Geliştirici: AA Game Studio (AA Games)<br>
+  Bu politika uygulamanın Android ve iOS sürümleri için geçerlidir.<br>
+  Son güncelleme: 18 Ekim 2026 · Sürüm 2.3
 </p>
 
 <h2>Kısaca</h2>
@@ -66,8 +67,10 @@
   <li><strong>Analiz:</strong> oyunu iyileştirmek için Google Analytics for Firebase
     ile kullanım istatistikleri toplarız. Bu istatistikler adınla ya da e-postanla
     ilişkilendirilmez.</li>
-  <li><strong>Satın alma:</strong> "Reklamları Kaldır" Google Play üzerinden satılır;
-    ödeme bilgilerin bize ulaşmaz.</li>
+  <li><strong>Satın alma:</strong> "Reklamları Kaldır" Google Play ya da App Store
+    üzerinden satılır; ödeme bilgilerin bize ulaşmaz.</li>
+  <li><strong>iOS'ta izleme:</strong> reklam tanımlayıcın (IDFA) yalnızca iOS'un
+    "izin ver" sorusuna evet dersen kullanılır.</li>
   <li><strong>Avrupa'da rızan:</strong> Avrupa Ekonomik Alanı, Birleşik Krallık veya
     İsviçre'deysen reklam ve analiz için seçimini sorarız; bu seçimi istediğin an
     değiştirebilirsin.</li>
@@ -76,8 +79,9 @@
 
 <h2>Veri sorumlusu</h2>
 <p>
-  Uygulamayı Google Play'de <strong>AA Game Studio</strong> geliştirici adıyla,
-  <strong>AA Games</strong> markasıyla yayımlayan bağımsız geliştirici.
+  Uygulamayı <strong>AA Game Studio</strong> geliştirici adıyla, <strong>AA Games</strong>
+  markasıyla yayımlayan bağımsız geliştirici (App Store'da satıcı adı geliştiricinin
+  kendi adıdır).
   Gizlilikle ilgili her soru ve talep için:
   <a href="mailto:asrinziyahocaogludeveloper@gmail.com">asrinziyahocaogludeveloper@gmail.com</a>
 </p>
@@ -99,7 +103,9 @@
 <p>Google Mobile Ads SDK'sı şunları otomatik olarak toplar ve Google ile paylaşır:</p>
 <ul>
   <li>IP adresi (yaklaşık konumu tahmin etmek için)</li>
-  <li>Reklam kimliği (Android Advertising ID) ve app set ID gibi cihaz tanımlayıcıları</li>
+  <li>Cihaz tanımlayıcıları: Android'de reklam kimliği (Android Advertising ID) ve app set
+    ID; iOS'ta satıcı tanımlayıcısı (IDFV) ve — yalnızca izleme izni verdiysen — reklam
+    tanımlayıcısı (IDFA)</li>
   <li>Reklamlarla etkileşimlerin (gösterim, dokunma, video izleme)</li>
   <li>Tanılama ve performans verileri (ör. reklamın yüklenme süresi, hata kayıtları)</li>
   <li>Cihaz modeli, işletim sistemi sürümü ve dil gibi teknik bilgiler</li>
@@ -137,20 +143,24 @@
   araç ona göre çalışır.
 </p>
 
-<h3>3. Satın alma — Google Play Faturalandırma</h3>
+<h3>3. Satın alma — Google Play Faturalandırma ve App Store</h3>
 <p>
   Oyunda tek bir ücretli ürün vardır: tek seferlik <strong>"Reklamları Kaldır"</strong>.
-  Ödeme tamamen Google Play üzerinden yapılır; kart ya da ödeme bilgilerin bize
-  iletilmez.
+  Ödeme tamamen Google Play (Android) ya da App Store (iOS) üzerinden yapılır; kart ya
+  da ödeme bilgilerin bize iletilmez.
 </p>
 <ul>
   <li>Uygulama, Google Play'in döndürdüğü satın alma kaydını (ürün kimliği, satın
     alma belirteci ve durumu) satın almayı onaylamak ve uygulamayı yeniden
     yüklediğinde geri getirmek için kullanır. "Reklamlar kaldırıldı" bilgisi
     yalnızca cihazında saklanır.</li>
+  <li>iOS'ta uygulama, App Store'un cihazdaki imzalı işlem kaydını (ürün kimliği,
+    işlem kimliği, satın alma ve varsa iade tarihi) satın almayı doğrulamak, geri
+    getirmek ve iade edilen bir satın almayı geri almak için kullanır.</li>
   <li>Google Play, Play Console'da bize sipariş kayıtlarını (sipariş numarası,
     ürün, tarih ve tutar gibi) gösterir. Bunları yalnızca iade, destek ve yasal
-    yükümlülükler (ör. vergi) için kullanırız.</li>
+    yükümlülükler (ör. vergi) için kullanırız. Apple da App Store Connect'te benzer
+    satış raporları gösterir; aynı amaçlarla kullanırız.</li>
   <li>Analiz aracı, satın almanın gerçekleştiğini bir olay olarak kaydeder.</li>
 </ul>
 
@@ -161,13 +171,19 @@
   bölgede olduğunu belirlemek için IP adresin kullanılır; verdiğin seçim cihazında
   saklanır ve reklam ile analiz araçlarına iletilir.
 </p>
+<p>
+  <strong>iOS — Uygulama İzleme Şeffaflığı (ATT):</strong> iOS'ta, reklam tanımlayıcını
+  (IDFA) kullanmadan önce kısa bir açıklama ekranından sonra iOS'un kendi izin sorusunu
+  gösteririz. İzin vermezsen IDFA kullanılmaz; oyun ve reklamlar yine çalışır, reklamlar
+  ilgi alanlarına göre seçilmez. Seçimini istediğin an iOS ayarlarından değiştirebilirsin.
+</p>
 
 <h2>Toplamadığımız veriler</h2>
 <ul>
   <li>Ad, e-posta, telefon numarası ya da başka bir iletişim bilgisi</li>
   <li>GPS ile belirlenen hassas konum</li>
   <li>Rehber, fotoğraflar, dosyalar; mikrofon ya da kamera</li>
-  <li>Kart ve ödeme bilgileri (Google Play'de kalır)</li>
+  <li>Kart ve ödeme bilgileri (Google Play'de ya da App Store'da kalır)</li>
   <li>Hesap, giriş ya da sohbet — uygulamada bunların hiçbiri yoktur</li>
 </ul>
 
@@ -177,16 +193,17 @@
   izinler: internet ve ağ durumu (reklam, analiz, rıza ve satın alma için), reklam
   kimliği ve Android'in reklam gizliliği arayüzleri (Google reklam SDK'sı ekler),
   Google Play faturalandırma ve reklam SDK'sının kendi çalışması için eklediği
-  standart sistem izinleri (temel cihaz durumu, arka plan işleri). Oyunun kendisi
-  internet bağlantısı olmadan da oynanabilir.
+  standart sistem izinleri (temel cihaz durumu, arka plan işleri). iOS'ta yalnızca
+  izleme izni (ATT) sorulur ve reddedilebilir. Oyunun kendisi internet bağlantısı
+  olmadan da oynanabilir.
 </p>
 
 <h2>Cihazında saklananlar</h2>
 <p>
   Oyun ilerlemen (seviyeler, yıldızlar, rün ağacı, rozetler, altın hazinesi),
   ayarların (ses, dil, titreşim), "Reklamları Kaldır" durumu, rıza seçimin ve
-  çevrimdışı kazancı hesaplamak için son oynadığın zaman, Android'in bu uygulamaya
-  ayırdığı özel alanda <strong>yalnızca senin cihazında</strong> saklanır; bize
+  çevrimdışı kazancı hesaplamak için son oynadığın zaman, işletim sisteminin bu
+  uygulamaya ayırdığı özel alanda <strong>yalnızca senin cihazında</strong> saklanır; bize
   gönderilmez.
 </p>
 <p>
@@ -204,6 +221,8 @@
     da sıfırlayabilirsin (çoğu cihazda <em>Ayarlar &rarr; Google &rarr; Reklamlar</em>
     ya da <em>Ayarlar &rarr; Güvenlik ve gizlilik &rarr; Gizlilik &rarr; Reklamlar</em>).
     Reklam kimliği silinince reklamlar ona göre kişiselleştirilemez.</li>
+  <li><strong>iOS'ta:</strong> izleme iznini <em>Ayarlar &rarr; Gizlilik ve Güvenlik
+    &rarr; İzleme</em>'den uygulama bazında açıp kapatabilirsin.</li>
   <li><strong>"Reklamları Kaldır":</strong> tam ekran ara reklamları kalıcı olarak
     kapatır.</li>
   <li><strong>Silme:</strong> cihazındaki veriler için <em>Ayarlar &rarr; İlerlemeyi
@@ -215,20 +234,22 @@
 <p>
   Kişisel verilerini <strong>satmayız</strong>, kiralamayız ya da takas etmeyiz.
   Yukarıda anlatılan veriler yalnızca Google'ın hizmetlerine (AdMob, Firebase,
-  Google Play, UMP) gider ve Google onları kendi politikalarına göre işler:
+  Google Play, UMP) ve iOS'ta satın alma için Apple'a (App Store) gider; onlar bu
+  verileri kendi politikalarına göre işler:
 </p>
 <ul>
   <li><a href="https://policies.google.com/technologies/partner-sites">Google,
     hizmetlerini kullanan uygulamalardan gelen bilgileri nasıl kullanır</a></li>
   <li><a href="https://policies.google.com/privacy">Google Gizlilik Politikası</a></li>
   <li><a href="https://firebase.google.com/support/privacy">Firebase gizlilik ve güvenlik</a></li>
+  <li><a href="https://www.apple.com/legal/privacy/">Apple Gizlilik Politikası</a></li>
 </ul>
 <p>Bunların dışında verileri yalnızca yasal bir zorunluluk olduğunda paylaşırız.</p>
 
 <h2>Yurt dışına aktarım</h2>
 <p>
-  Google verileri Türkiye ve Avrupa dışında da, başta ABD olmak üzere farklı
-  ülkelerdeki sunucularında işleyebilir. Bu aktarımlar Google'ın taahhüt ettiği
+  Google ve Apple verileri Türkiye ve Avrupa dışında da, başta ABD olmak üzere farklı
+  ülkelerdeki sunucularında işleyebilir. Bu aktarımlar bu şirketlerin taahhüt ettiği
   güvenceler (ör. standart sözleşme maddeleri) kapsamında yapılır.
 </p>
 
@@ -247,14 +268,14 @@
     tanımlamayan toplu raporlar daha uzun kalabilir.</li>
   <li><strong>Reklam verileri:</strong> Google'ın
     <a href="https://policies.google.com/technologies/retention">veri saklama politikasına</a> göre.</li>
-  <li><strong>Satın alma kayıtları:</strong> Google Play'de, yasal saklama süreleri boyunca.</li>
+  <li><strong>Satın alma kayıtları:</strong> Google Play'de ya da App Store'da, yasal saklama süreleri boyunca.</li>
 </ul>
 
 <h2>Güvenlik</h2>
 <p>
   SDK'lar verileri Google'a şifreli (TLS) bağlantıyla gönderir. Kendi sunucumuz
-  yoktur; cihazındaki veriler Android'in yalnızca bu uygulamaya açık özel alanında
-  durur.
+  yoktur; cihazındaki veriler işletim sisteminin yalnızca bu uygulamaya açık özel
+  alanında durur.
 </p>
 
 <h2>Çocuklar</h2>
@@ -283,7 +304,8 @@
 <p>
   Politika değişirse bu sayfa güncellenir ve üstteki tarih değişir. Toplanan
   verileri genişleten bir değişiklik, uygulamanın yeni bir sürümüyle ve Google
-  Play'deki veri güvenliği beyanının güncellenmesiyle birlikte yayımlanır.
+  Play'deki veri güvenliği beyanı ile App Store'daki gizlilik bilgilerinin
+  güncellenmesiyle birlikte yayımlanır.
 </p>
 
 <h2>İletişim</h2>
@@ -299,8 +321,9 @@
 <h1 id="english">Privacy Policy</h1>
 <p class="meta">
   <strong>Merge &amp; Mortar</strong> (on Google Play: <em>Merge &amp; Mortar: Tower Defense</em>)<br>
-  Package name: <code>com.aagames.mergekeep</code> · Developer: AA Game Studio (AA Games)<br>
-  Last updated: 15 October 2026 · Version 2.2
+  Package name / Bundle ID: <code>com.aagames.mergekeep</code> · Developer: AA Game Studio (AA Games)<br>
+  This policy applies to the Android and iOS versions of the app.<br>
+  Last updated: 18 October 2026 · Version 2.3
 </p>
 
 <h2>In short</h2>
@@ -313,8 +336,10 @@
   <li><strong>Analytics:</strong> we collect usage statistics with Google Analytics
     for Firebase to improve the game. These statistics are not linked to your name
     or email.</li>
-  <li><strong>Purchases:</strong> "Remove Ads" is sold through Google Play; your
-    payment details never reach us.</li>
+  <li><strong>Purchases:</strong> "Remove Ads" is sold through Google Play or the App
+    Store; your payment details never reach us.</li>
+  <li><strong>Tracking on iOS:</strong> your advertising identifier (IDFA) is used only
+    if you answer "Allow" to iOS's tracking prompt.</li>
   <li><strong>Your consent in Europe:</strong> if you are in the European Economic
     Area, the United Kingdom or Switzerland, we ask for your choice about ads and
     analytics, and you can change it at any time.</li>
@@ -323,8 +348,9 @@
 
 <h2>Who is responsible</h2>
 <p>
-  The independent developer publishing this app on Google Play as <strong>AA Game Studio</strong>,
-  under the <strong>AA Games</strong> brand. For any
+  The independent developer publishing this app as <strong>AA Game Studio</strong>,
+  under the <strong>AA Games</strong> brand (on the App Store the seller name is the
+  developer's own name). For any
   privacy question or request:
   <a href="mailto:asrinziyahocaogludeveloper@gmail.com">asrinziyahocaogludeveloper@gmail.com</a>
 </p>
@@ -346,7 +372,9 @@
 <p>The Google Mobile Ads SDK automatically collects the following and shares it with Google:</p>
 <ul>
   <li>IP address (to estimate approximate location)</li>
-  <li>Device identifiers such as the advertising ID (Android Advertising ID) and app set ID</li>
+  <li>Device identifiers: on Android the advertising ID (Android Advertising ID) and app
+    set ID; on iOS the identifier for vendor (IDFV) and — only if you allow tracking —
+    the advertising identifier (IDFA)</li>
   <li>Your interactions with ads (impressions, taps, video views)</li>
   <li>Diagnostic and performance data (e.g. ad load times, error logs)</li>
   <li>Technical information such as device model, operating system version and language</li>
@@ -385,19 +413,23 @@
   through Google's consent mode, and the tool behaves accordingly.
 </p>
 
-<h3>3. Purchases — Google Play Billing</h3>
+<h3>3. Purchases — Google Play Billing and the App Store</h3>
 <p>
   The game has a single paid product: a one-time <strong>"Remove Ads"</strong>
-  purchase. Payment is handled entirely by Google Play; your card or payment details
-  are never shared with us.
+  purchase. Payment is handled entirely by Google Play (Android) or the App Store
+  (iOS); your card or payment details are never shared with us.
 </p>
 <ul>
   <li>The app uses the purchase record returned by Google Play (product ID, purchase
     token and status) to acknowledge the purchase and to restore it when you
     reinstall the app. The "ads removed" state is stored only on your device.</li>
+  <li>On iOS, the app uses the App Store's signed transaction record on your device
+    (product ID, transaction ID, purchase date and, if any, refund date) to verify and
+    restore the purchase and to revoke a refunded one.</li>
   <li>Google Play shows us order records in the Play Console (such as order number,
     product, date and amount). We use them only for refunds, support and legal
-    obligations (e.g. tax).</li>
+    obligations (e.g. tax). Apple shows similar sales reports in App Store Connect,
+    which we use for the same purposes.</li>
   <li>The analytics tool records that a purchase took place as an event.</li>
 </ul>
 
@@ -408,13 +440,20 @@
   is used to determine your region; the choice you make is stored on your device and
   passed to the advertising and analytics tools.
 </p>
+<p>
+  <strong>iOS — App Tracking Transparency (ATT):</strong> on iOS, before your advertising
+  identifier (IDFA) is used, we show a short explanation followed by iOS's own permission
+  prompt. If you do not allow it, the IDFA is not used; the game and its ads still work,
+  but ads are not chosen based on your interests. You can change your choice at any time
+  in iOS settings.
+</p>
 
 <h2>Data we do not collect</h2>
 <ul>
   <li>Name, email, phone number or any other contact details</li>
   <li>Precise (GPS) location</li>
   <li>Contacts, photos, files; microphone or camera</li>
-  <li>Card and payment details (they stay with Google Play)</li>
+  <li>Card and payment details (they stay with Google Play or the App Store)</li>
   <li>Accounts, sign-in or chat — the app has none of these</li>
 </ul>
 
@@ -424,8 +463,9 @@
   permissions. It uses: internet and network state (for ads, analytics, consent and
   purchases), the advertising ID and Android's ad privacy interfaces (added by the
   Google ads SDK), Google Play billing, and standard system permissions the ads SDK
-  adds for its own operation (basic device state, background jobs). The game itself
-  is playable without an internet connection.
+  adds for its own operation (basic device state, background jobs). On iOS the only
+  permission requested is tracking (ATT), which you can decline. The game itself is
+  playable without an internet connection.
 </p>
 
 <h2>Data stored on your device</h2>
@@ -433,7 +473,7 @@
   Your game progress (levels, stars, the rune tree, badges, gold treasury), your
   settings (sound, language, vibration), the "Remove Ads" state, your consent choice,
   and the time you last played (to calculate offline earnings) are stored in the
-  private storage area Android reserves for this app, <strong>on your device
+  private storage area the operating system reserves for this app, <strong>on your device
   only</strong>; they are not sent to us.
 </p>
 <p>
@@ -451,6 +491,8 @@
     Android settings (on most devices <em>Settings &rarr; Google &rarr; Ads</em> or
     <em>Settings &rarr; Security &amp; privacy &rarr; Privacy &rarr; Ads</em>). Once it
     is deleted, ads can no longer be personalized based on it.</li>
+  <li><strong>On iOS:</strong> you can turn tracking on or off per app in <em>Settings
+    &rarr; Privacy &amp; Security &rarr; Tracking</em>.</li>
   <li><strong>"Remove Ads":</strong> permanently turns off full-screen interstitial ads.</li>
   <li><strong>Deletion:</strong> for data on your device, use <em>Settings &rarr; Erase
     progress</em> or uninstall the app. For analytics data held by Google, contact us;
@@ -460,22 +502,23 @@
 <h2>Sharing</h2>
 <p>
   We <strong>do not sell</strong>, rent or trade your personal data. The data described
-  above goes only to Google's services (AdMob, Firebase, Google Play, UMP), and Google
-  processes it under its own policies:
+  above goes only to Google's services (AdMob, Firebase, Google Play, UMP) and, for
+  purchases on iOS, to Apple (App Store), which process it under their own policies:
 </p>
 <ul>
   <li><a href="https://policies.google.com/technologies/partner-sites">How Google uses
     information from sites or apps that use its services</a></li>
   <li><a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
   <li><a href="https://firebase.google.com/support/privacy">Firebase privacy and security</a></li>
+  <li><a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a></li>
 </ul>
 <p>Beyond this, we share data only when legally required.</p>
 
 <h2>International transfers</h2>
 <p>
-  Google may process data outside Turkey and Europe, including in the United States,
-  on servers in various countries. These transfers take place under the safeguards
-  Google has committed to (e.g. standard contractual clauses).
+  Google and Apple may process data outside Turkey and Europe, including in the United
+  States, on servers in various countries. These transfers take place under the
+  safeguards these companies have committed to (e.g. standard contractual clauses).
 </p>
 
 <h2>Legal basis (EEA, UK, Switzerland)</h2>
@@ -493,14 +536,14 @@
     aggregated reports that identify no one may be kept longer.</li>
   <li><strong>Advertising data:</strong> according to Google's
     <a href="https://policies.google.com/technologies/retention">data retention policy</a>.</li>
-  <li><strong>Purchase records:</strong> kept by Google Play for the legally required periods.</li>
+  <li><strong>Purchase records:</strong> kept by Google Play or the App Store for the legally required periods.</li>
 </ul>
 
 <h2>Security</h2>
 <p>
   The SDKs send data to Google over encrypted (TLS) connections. We run no servers of
-  our own; data on your device stays in Android's private storage area, accessible
-  only to this app.
+  our own; data on your device stays in the operating system's private storage area,
+  accessible only to this app.
 </p>
 
 <h2>Children</h2>
@@ -529,7 +572,8 @@
 <p>
   If this policy changes, this page will be updated and the date at the top revised.
   Any change that expands the data collected will ship together with a new version of
-  the app and an update to the Data Safety declaration on Google Play.
+  the app and an update to the Data Safety declaration on Google Play and the privacy
+  details on the App Store.
 </p>
 
 <h2>Contact</h2>
